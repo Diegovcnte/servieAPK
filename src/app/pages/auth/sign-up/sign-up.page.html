@@ -1,0 +1,76 @@
+<ion-header>
+
+
+
+</ion-header>
+
+<ion-content>
+    <app-patron class="arriba"></app-patron>
+    
+
+    <div class="d-flex-center">
+        <form [formGroup]="form" class="signup-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
+      
+          <app-custom-input
+          autocomplete="name"
+          
+          [control]="form.controls.name"
+          type="text"
+          label="Nombre"></app-custom-input>
+
+          <app-custom-input
+          autocomplete="name"
+          [control]="form.controls.lastName"
+          type="text"
+          label="Apellido"></app-custom-input>
+  
+          <app-custom-input
+          autocomplete="tel"
+          icon="call-outline"
+          [control]="form.controls.phoneNumber"
+          type="tel"
+          label="Teléfono"></app-custom-input>
+  
+          <app-custom-input
+          icon="mail-outline"
+          autocomplete="email"
+          [control]="form.controls.email"
+          type="email"
+          label="Correo"></app-custom-input>
+  
+  
+          <app-custom-input 
+          icon="lock-closed-outline" 
+          autocomplete="new-password"
+          [control]="form.controls.password"
+          type="password"
+          label="Contraseña"
+          ></app-custom-input>
+
+          <app-custom-input 
+          icon="lock-closed-outline" 
+          autocomplete="new-password"
+          [control]="form.controls.confirmPassword"
+          type="password"
+          label="Confirmar contraseña"
+          ></app-custom-input>
+  
+        
+          <ion-button   expand="block" class="regsubmit"  type="submit" [disabled]="form.invalid" >
+            Registrar
+          </ion-button>
+  
+  
+         
+         
+    
+        </form>
+      </div>
+
+      <app-patron class="patron"></app-patron>
+
+
+
+
+
+</ion-content>

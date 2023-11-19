@@ -1,0 +1,30 @@
+<ion-header>
+
+  <app-toolbar></app-toolbar>
+
+</ion-header>
+
+<ion-content >
+  <app-background></app-background>
+  <app-header title="Nuestros" titlestrong=" servicios"></app-header>
+
+  <ion-icon (click)="openModal()" class="principal-icon" name="person-circle-outline" ></ion-icon>
+
+  <div class="" *ngIf="modalSwitch == true">
+
+    <app-pop-up></app-pop-up>
+
+  </div>
+
+
+  <app-buttons texto="Reparaciones">  </app-buttons>
+  <app-buttons texto="Mantenimientos">  </app-buttons>
+  <app-buttons texto="Permisos">  </app-buttons>
+  <app-buttons texto="Colisiones">  </app-buttons>
+  <app-buttons texto="Modificaciones">  </app-buttons>
+  <app-buttons texto="Sucursales">  </app-buttons>
+
+
+  <app-circle></app-circle>
+  <app-patron class="patron"></app-patron>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "serviexpressAPK",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

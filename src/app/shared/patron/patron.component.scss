@@ -1,0 +1,23 @@
+.patron {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 142px;
+    background-image: url('../../../assets/patronbn.png');
+    background-repeat: repeat;
+    z-index: 2;
+  }
+  
+
+.arriba{
+
+    top: 0 ; /* Cambiado de 'bottom' a 'top' */
+    left: 0;
+    right: 0;
+    height: 142px;
+    background-image: url('../../../assets/patronbn.png');
+    background-repeat: repeat;
+    z-index: 2;
+    transform: rotate(180deg); 
+}

@@ -1,0 +1,156 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+
+
+.d-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.custom-input {
+    --border-color: #9a9a9a;
+    --border-radius: 15px;
+    --border-style: solid;
+    --border-width: 1px;
+    margin: 20px 0;
+
+    ion-label {
+        position: relative;
+        bottom: 2px;
+
+    }
+
+    .eye-icon {
+        position: relative;
+        top: 13px;
+
+    }
+}
+
+.validators {
+    color: var(--ion-color-danger);
+    font-size: 13px;
+    text-align: center;
+}
+
+
+.auth-form {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20vw;
+    z-index: 3;
+
+}
+
+.submit {
+    position: fixed;
+    bottom: 230px;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 180px; 
+    padding: 10px 15px; 
+    text-align: center;
+    --background: #5E17EB;
+    text-transform: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.buttonreg {
+    position: fixed;
+    bottom: 218px;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 180px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.forgot {
+    color: rgb(212, 4, 4);
+    font-size: 12px;
+    transform:translateX(18px);
+    top: -2vh;
+    position: relative;
+    text-decoration: underline;
+
+}
+
+.signup-form {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+
+    z-index: 3;
+
+}
+
+.regsubmit{
+    width: 40%;
+    margin: auto;
+    --background: #5E17EB;
+    text-transform: none;
+    font-weight: bold;
+    font-size: 16px;
+    
+}
+
+.forgsubmit{
+    width: 40%;
+    margin: auto;
+    --background: #5E17EB;
+    text-transform: none;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 89px;
+
+    
+}
+
+
+.principal-icon {
+    position: relative;
+    margin: auto;
+    left: 50%; /* Ajuste para centrar el icono */
+    transform: translateX(-50%) scale(5); /* Ajuste para centrar y escalar */
+    top: 14%;
+    z-index: 9;
+    color: #105c7c;
+    transition: transform 0.3s ease, color 0.3s ease; /* Agregado para una transición suave */
+}
+
+.principal-icon:hover {
+    color: #590b64; /* Cambia el color del icono al pasar el mouse */
+}
+
