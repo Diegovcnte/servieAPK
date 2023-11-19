@@ -70,3 +70,8 @@ Thumbs.db
 # ignore
 .angular
 node_modules
+
+# Firebase
+.firebase
+*-debug.log
+.runtimeconfig.json
