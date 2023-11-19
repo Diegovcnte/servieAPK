@@ -154,3 +154,22 @@
     color: #590b64; /* Cambia el color del icono al pasar el mouse */
 }
 
+.botoncito{
+    z-index: 6;
+    position: relative;
+    margin: auto;
+    padding-top: 5%;
+    text-transform: none;
+    font-weight: bold;
+    font-size: 15px;
+    transform: translateY(-80px);
+    --background: #2DAD9D;
+    --border-radius: 38px;
+    --border-color:#ffffff;
+    --border-radius: 15px;
+    --border-style: solid;
+    --border-width: 1px;
+
+    --color: #5E17EB;
+    height: 60px;
+}

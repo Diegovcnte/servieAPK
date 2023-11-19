@@ -1,5 +1,5 @@
 ion-toolbar {
-    --background: #ffffff; 
+    --background: #ccc8c8; 
 }
 
 .mi-toolbar {
@@ -12,4 +12,8 @@ ion-toolbar {
     margin-right: auto;
     border-radius: 15px;
     top: -24px;
+}
+
+.bajando{
+    transform:translateY(8px)
 }

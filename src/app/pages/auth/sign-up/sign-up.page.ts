@@ -12,7 +12,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class SignUpPage implements OnInit {
 
   form = new FormGroup({
-
+    uid : new FormControl(''),
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     lastName: new FormControl('', [Validators.required, Validators.minLength(3)]),
     phoneNumber: new FormControl('', [Validators.required, Validators.pattern('[0-9]{8}')]),
@@ -43,6 +43,12 @@ export class SignUpPage implements OnInit {
 
         await this.firebaseSvc.updateUser(this.form.value.name);
 
+        let uid = res.user.uid;
+
+        this.form.controls.uid.setValue(uid);
+
+        this.setUserInfo(uid);
+
         console.log(res);
       }).catch(error =>{
         console.log(error);
@@ -63,6 +69,44 @@ export class SignUpPage implements OnInit {
     
   }
 
+
+
+
+  async setUserInfo(uid: string){
+    if (this.form.valid){
+
+      const loading = await this.utilsSvc.loading();
+      await loading.present();
+
+      let path = 'users/${uid}';
+      delete this.form.value.password;
+      delete this.form.value.confirmPassword;
+
+      this.firebaseSvc.setDocument(path, this.form.value).then(async res => {
+
+         this.utilsSvc.saveInLocalStorage('user', this.form.value) 
+         this.utilsSvc.routerLink('feed');
+         this.form.reset();
+
+
+      }).catch(error =>{
+        console.log(error);
+
+        this.utilsSvc.presentToast({
+          message: error.message,
+          duration: 2500,
+          color: 'primary',
+          position: 'middle',
+          icon: 'alert-circle-outline'
+        })
+
+
+      }).finally(()=>{
+        loading.dismiss();
+      })
+    }
+    
+  }
 
 
 }

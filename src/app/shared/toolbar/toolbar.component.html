@@ -1,1 +1,10 @@
-<ion-toolbar class="mi-toolbar ion-no-border"></ion-toolbar>
+<ion-header>
+    <ion-toolbar class="mi-toolbar ion-no-border">
+
+        <ion-buttons slot="start">
+            <ion-back-button class="bajando" *ngIf="backButton" [defaultHref]="backButton"></ion-back-button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
