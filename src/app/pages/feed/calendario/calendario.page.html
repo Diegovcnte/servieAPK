@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <app-toolbar  backButton="feed"></app-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <app-background></app-background>
+
+  <!-- Agrega un margen superior al ion-grid para moverlo hacia abajo -->
+  <ion-grid class="calendar-grid">
+    <ion-row>
+      <ion-col size="12">
+        <!-- Agrega el título h1 -->
+        <h1 class="ion-text-center" style="color: #5E17EB;  text-transform: none;">SELECCIONE SU CITA</h1>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Seleccione una fecha</ion-label>
+          <ion-datetime display-format="MMM DD, YYYY" placeholder="Seleccione una fecha"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Otros campos de tu formulario -->
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button routerLink="../compra" expand="full" type="submit">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-patron class="patron"></app-patron>
+</ion-content>

@@ -110,3 +110,4 @@ export class SignUpPage implements OnInit {
 
 
 }
+

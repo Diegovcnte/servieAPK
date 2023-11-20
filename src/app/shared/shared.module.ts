@@ -11,6 +11,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { BackgroundComponent } from './background/background.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
+import { AddUpdateProductComponent } from './add-update-product/add-update-product.component';
 
 
 
@@ -25,6 +26,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     BackgroundComponent,
     ButtonsComponent,
     PopUpComponent,
+    AddUpdateProductComponent,
   ],
   exports: [
     HeaderComponent,
@@ -37,6 +39,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     ReactiveFormsModule,
     ButtonsComponent,
     PopUpComponent,
+    AddUpdateProductComponent,
   ],
   imports: [
     CommonModule,

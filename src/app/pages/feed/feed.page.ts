@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';  // Importa AngularFireAuth
 import { SwitchService } from 'src/app/services/switch.service';
-
 
 @Component({
   selector: 'app-feed',
@@ -9,22 +9,29 @@ import { SwitchService } from 'src/app/services/switch.service';
 })
 export class FeedPage implements OnInit {
 
+  modalSwitch!: boolean;
+  isAdmin: boolean = false; 
+  user: any;
 
-  modalSwitch!:boolean;
-
-  constructor(private modalSS:SwitchService) { }
-
-
+  constructor(
+    private modalSS: SwitchService,
+    private afAuth: AngularFireAuth 
+  ) { }
 
   ngOnInit() {
+    this.afAuth.authState.subscribe((user) => {
+      this.isAdmin = user?.email === 'serviexpress@gmail.com';
+     
 
-    this.modalSS.$modal.subscribe((valor)=>{this.modalSwitch = valor})
+    });
 
+    // Suscríbete al servicio de cambio de modal
+    this.modalSS.$modal.subscribe((valor) => {
+      this.modalSwitch = valor;
+    });
   }
 
-
-  openModal(){
+  openModal() {
     this.modalSwitch = true;
   }
-
 }

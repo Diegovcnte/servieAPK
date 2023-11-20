@@ -22,6 +22,7 @@ const routes: Routes = [
     path: 'version',
     loadChildren: () => import('./pages/version/version.module').then( m => m.VersionPageModule)
   },
+  
 ];
 
 @NgModule({

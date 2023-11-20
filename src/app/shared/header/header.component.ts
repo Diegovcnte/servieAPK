@@ -1,17 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
+// header.component.ts
+
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
+  template: `
+    <div [class]="rojoClass">
+      <div class="ion-text-center fondito">
+        <h1 class="tituloh1">{{ title }}<strong>{{ titlestrong }}</strong></h1>
+      </div>
+    </div>
+  `,
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent  implements OnInit {
-
+export class HeaderComponent {
   @Input() title!: string;
   @Input() titlestrong!: string;
-
-  constructor() { }
-
-  ngOnInit() {}
-
+  @Input() isModal!: boolean;
+  @Input() rojoClass: string = 'app-header';
 }

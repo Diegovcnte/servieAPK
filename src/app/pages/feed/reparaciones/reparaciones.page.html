@@ -1,0 +1,54 @@
+<ion-header>
+  <app-toolbar backButton="feed"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-background></app-background>
+
+  <h1 class="titulorojo">Reparaciones</h1>`
+
+  <div class="test">
+    <ion-list  >
+    <ion-item-sliding class="product-item" *ngFor="let p of products">
+      <ion-item>
+        
+        <ion-label >
+          <a routerLink="../calendario" class="name">{{p.name}}</a>
+          <div class="data">
+            <strong>Precio:</strong> {{p.price | currency: 'CLP'}} <br>
+            <strong>Stock:</strong> {{p.disponibilidad}}
+          </div>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options>
+        
+        <ion-item-option *ngIf="isAdmin" (click)="addUpdateProduct(p)">
+          <ion-icon class="option-btn" name="create-outline"></ion-icon>
+        </ion-item-option>
+  
+        <ion-item-option *ngIf="isAdmin" (click)="confirmDeleteProduct(p)" color="danger">
+          <ion-icon class="option-btn" name="trash-outline"></ion-icon>
+        </ion-item-option>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+</div>
+  
+
+
+
+  <ion-fab *ngIf="isAdmin" vertical="bottom" horizontal="end" slot="fixed">
+
+    <ion-fab-button  (click)="addUpdateProduct()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    
+  </ion-fab>
+
+
+
+  <app-patron class="patron"></app-patron>
+</ion-content>
